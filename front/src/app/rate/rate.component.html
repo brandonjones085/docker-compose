@@ -1,0 +1,51 @@
+<link href="https://fonts.googleapis.com/css?family=Courgette&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Courgette|Niconne&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Alegreya|Courgette|Niconne&display=swap" rel="stylesheet">
+
+<div class="container">
+  <h1 class="text-center"><b>Select the best pup </b></h1>
+    <div class="row ">
+
+<div class="col-5">
+
+<mat-card class="example-card">
+<!-- *ngFor="let pup of pups"  -->
+        <mat-card-header>
+        
+          <mat-card-title class="name">Name: {{pups[0]?.title}}</mat-card-title>
+          <mat-card-subtitle class="breed">Breed: {{pups[0]?.content}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]="pups[0]?.imagePath" [alt]="pups[0]?.title">
+        <mat-card-content>
+          
+
+        </mat-card-content>
+        <mat-card-actions>
+          <button id="leftButton" mat-button (click)="rateLPup($event, pups[0].id, pups[0].title, pups[0].content, pups[0].rates, pups[0].imagePath)">Best Pup</button>
+         
+        </mat-card-actions>
+      </mat-card>
+    </div>
+      <div class="col-2"></div>
+
+      <div class="col-5">
+      <mat-card class="example-card" >
+        <!-- *ngFor="let pup of pups"  -->
+                <mat-card-header>
+                
+                  <mat-card-title class="name">Name: {{pups[1]?.title}}</mat-card-title>
+                  <mat-card-subtitle class="breed">Breed: {{pups[1]?.content}}</mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image [src]="pups[1]?.imagePath" [alt]="pups[1]?.title">
+                <mat-card-content>
+                    
+    
+                </mat-card-content>
+                <mat-card-actions>
+                  <button id="rightButton" mat-button (click)="rateRPup($event, pups[1].id, pups[1].title, pups[1].content, pups[1].rates, pups[1].imagePath )">Best Pup</button>
+                 
+                </mat-card-actions>
+              </mat-card>
+            </div>
+        </div>
+        </div>

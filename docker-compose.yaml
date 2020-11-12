@@ -1,0 +1,26 @@
+
+version: '3'
+
+services: 
+
+  puprate: 
+    build: pup 
+    ports: 
+      - "4200:80"
+    
+  express: 
+    build: backend
+    restart: always
+    ports: 
+      - "3000:3000"
+    links: 
+      - mongo
+  mongo:
+    container_name: mongo
+    build: mongo
+    ports: 
+      - "27017:27017"
+
+
+
+    

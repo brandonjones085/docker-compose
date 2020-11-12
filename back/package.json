@@ -1,0 +1,19 @@
+{
+  "name": "pup",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+
+    "@angular/router": "~10.1.5",
+    "mongoose": "^5.10.9",
+    "multer": "^1.4.2",
+    "nodemon": "^2.0.5",
+    "rxjs": "~6.6.0",
+    "tslib": "^2.0.0",
+    "zone.js": "~0.10.2"
+  },
+  "scripts": {
+    "start":"node server.js"
+
+  }
+}
