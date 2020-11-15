@@ -29,6 +29,6 @@
     <b>Rates: {{post.rates}} </b>
    
   </mat-card-actions>
-  <!-- <button (click)="onDelete(post.id)">Delete</button>  -->
+  <button (click)="onDelete(post.id)">Delete</button>  
 </mat-card>
 <p class="info-text mat-body-1" *ngIf="posts.length <= 0 && !isLoading">No posts added yet!</p>

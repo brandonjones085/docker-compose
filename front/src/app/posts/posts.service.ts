@@ -14,11 +14,11 @@ export class PostsService {
 
   constructor(private http: HttpClient, private router: Router) {}
 
-  //http://nodeapi-env-1.eba-cgcjccap.us-west-2.elasticbeanstalk.com/api/posts
+
 
   getPosts() {
     this.http
-      .get<{ message: string; posts: any }>("http:localhost:3000/api/posts")
+      .get<{ message: string; posts: any }>("http://35.165.251.254:4000/api/posts")
       .pipe(
         map(postData => {
           return postData.posts.map(post => {
@@ -38,13 +38,14 @@ export class PostsService {
       });
   }
 
+
   getPostUpdateListener() {
     return this.postsUpdated.asObservable();
   }
 
   getPost(id: string) {
     return this.http.get<{ _id: string, title: string, content: string, imagePath: string }>(
-      "http:localhost:3000/api/posts/" + id
+      "http://35.165.251.254:4000/api/posts/" + id
     );
   }
 
@@ -61,7 +62,7 @@ export class PostsService {
     }
    
     
-    this.http.put("http:localhost:3000/api/rate/" + id, pupData)
+    this.http.put("http://35.165.251.254:4000/api/rate/" + id, pupData)
     
     .subscribe(response=>{
       console.log(response)
@@ -72,7 +73,7 @@ export class PostsService {
 
 
 getP(){
-  this.http.get<{message:string, posts:any}>("http:localhost:3000/api/rate")
+  this.http.get<{message:string, posts:any}>("http://35.165.251.254:4000/api/rate")
   .pipe(map((postData)=>{
       
       return postData.posts.map(post=>{
@@ -107,7 +108,7 @@ getP(){
     postData.append("image", image, title);
     this.http
       .post<{ message: string; post: Post }>(
-        "http:localhost:3000/api/posts",
+        "http://35.165.251.254:4000/api/posts",
         postData
       )
       .subscribe(responseData => {
@@ -128,8 +129,9 @@ getP(){
 
 
   deletePost(postId: string) {
+    console.log("clicked")
     this.http
-      .delete("http:localhost:3000/api/posts/" + postId)
+      .delete("http://35.165.251.25:4000/api/posts/" + postId)
       .subscribe(() => {
         const updatedPosts = this.posts.filter(post => post.id !== postId);
         this.posts = updatedPosts;
