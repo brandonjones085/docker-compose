@@ -7,6 +7,17 @@ mat-card{
 .example-card {
     width: 400px;
   }
+
+  .main-div{
+
+    justify-content: center; 
+    align-items: center; 
+  }
+
+  .center{
+    width: 75%; 
+    margin: 10px auto; 
+  }
   
   .example-header-image {
     background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');

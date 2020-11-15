@@ -13,7 +13,7 @@ export class PostsService {
   private postsUpdated = new Subject<Post[]>();
 
   constructor(private http: HttpClient, private router: Router) {}
-
+//35.165.251.254:4000
 
 
   getPosts() {
@@ -131,7 +131,7 @@ getP(){
   deletePost(postId: string) {
     console.log("clicked")
     this.http
-      .delete("http://35.165.251.25:4000/api/posts/" + postId)
+      .delete("http://35.165.251.254:4000/api/posts/" + postId)
       .subscribe(() => {
         const updatedPosts = this.posts.filter(post => post.id !== postId);
         this.posts = updatedPosts;

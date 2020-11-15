@@ -1,19 +1,6 @@
 <mat-spinner *ngIf="isLoading"></mat-spinner>
-<!-- <mat-accordion multi="true" *ngIf="posts.length > 0 && !isLoading">
-  <mat-expansion-panel *ngFor="let post of posts">
-    <mat-expansion-panel-header>
-      {{ post.title }}
-    </mat-expansion-panel-header>
-    <div class="post-image">
-      <img [src]="post.imagePath" [alt]="post.title">
-    </div>
-    <p>{{ post.content }}</p>
-    <mat-action-row>
-     
-    </mat-action-row>
-  </mat-expansion-panel>
-</mat-accordion> -->
-<mat-card class="example-card center" multi="true" layout="center" *ngFor="let post of posts ">
+
+<mat-card class="example-card center" multi="true" layout="center" *ngFor="let post of posts; index as i ">
   <mat-card-header>
     
     <mat-card-title class="name">Name: {{ post.title }}</mat-card-title>
@@ -26,9 +13,11 @@
 
   </mat-card-content>
   <mat-card-actions class="rates">
+    <b>Num: {{i + 1}}</b>
+    <br>
     <b>Rates: {{post.rates}} </b>
    
   </mat-card-actions>
-  <button (click)="onDelete(post.id)">Delete</button>  
+  <!-- <button (click)="onDelete(post.id)">Delete</button>   -->
 </mat-card>
 <p class="info-text mat-body-1" *ngIf="posts.length <= 0 && !isLoading">No posts added yet!</p>

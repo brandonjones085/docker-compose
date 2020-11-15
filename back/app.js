@@ -8,9 +8,7 @@ const rateRoutes = require("./routes/rate")
 
 const app = express();
 
-const dbHost = 'mongodb+srv://brandon085:Bj959211@postdb.kn0jt.mongodb.net/puppost?retryWrites=true&w=majority'
-
-//mongodb://mongo:27017/pup
+const dbHost = 'mongodb://mongo-mongodb.default.svc.cluster.local:27017/pup'
 
 
 mongoose.connect(dbHost)
@@ -19,6 +17,11 @@ mongoose.connect(dbHost)
 }).catch(()=>{
     console.log("Connection failed"); 
 }); 
+
+//
+//mongodb+srv://brandon085:Bj959211@postdb.kn0jt.mongodb.net/puppost?retryWrites=true&w=majority
+
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
